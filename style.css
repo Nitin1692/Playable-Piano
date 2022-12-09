@@ -24,6 +24,10 @@ body{
 .piano-keys .key{
     color: #a2a2a2;
     list-style: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
 }
 
 .wrapper header{
@@ -80,5 +84,44 @@ header .column span{
 .keys-checkbox input:checked::before{
     left: 35px;
     background: #fff;
+}
 
+.piano-keys{
+    display: flex;
+    margin-top: 40px;
+}
+
+.piano-keys .white{
+    width: 70px;
+    height: 230px;
+    background: linear-gradient(#fff 96%, #eee 4%);
+    border-radius: 8px;
+    border: 1px solid #000;
+}
+
+.piano-keys .black{
+    width: 44px;
+    height: 140px;
+    border-radius: 0 0 5px 5px;
+    margin: 0 -22px 0 -22px;
+    z-index: 2;
+    background: linear-gradient(#333, #000);
+}
+
+.piano-keys span{
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.13rem;
+}
+
+.piano-keys .white:active{
+    background: linear-gradient(to bottom,#fff 0%, #eee 100%);
+    box-shadow: inset -5px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.piano-keys .black:active{
+    background: linear-gradient(to bottom,#000, #434343);
+    box-shadow: inset -5px 5px 20px rgba(255, 255, 255, 0.1);
 }
